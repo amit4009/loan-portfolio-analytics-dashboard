@@ -1,127 +1,167 @@
-[Link to powerBI dashboard](https://app.powerbi.com/links/SD74Sak5j-?ctid=a8eec281-aaa3-4dae-ac9b-9a398b9215e7&pbi_source=linkShare) 
+# Bank Loan Portfolio Analytics Dashboard
 
-# Bank Loan Report Project
-This project presents an interactive dashboard for analyzing loan application data. The dashboard provides insights into various aspects of bank loans, including application counts, funded and received amounts, interest rates, loan purposes, and risk analysis. The data is analyzed through SQL queries, and the results are visualized to support decision-making and reporting.
+[View Power BI Dashboard](https://app.powerbi.com/links/SD74Sak5j-?ctid=a8eec281-aaa3-4dae-ac9b-9a398b9215e7&pbi_source=linkShare)
 
+## Overview
 
-## Project Overview
-<br>The Bank Loan Report project is designed to assist financial institutions in monitoring and analyzing loan application data. It allows users to track the volume of loan applications, the amount funded and received, the average interest rate, and the Debt-to-Income (DTI) ratio. The data is segmented by various factors like loan purpose, homeownership status, employee length, and more, providing a comprehensive view of the loan portfolio.
-</br>
+This project analyzes bank loan application and repayment data using SQL and Power BI. The dashboard tracks loan applications, funded amount, amount received, interest rates, debt-to-income ratio, loan status, borrower segments, and portfolio performance.
 
-## Data Sources
-<br>The project uses a database (bank_loan_data) containing detailed loan information, including application IDs, loan purpose, ownership status, loan amount, interest rate, funded and received amounts, and issue dates. The data is analyzed through SQL queries, aggregated, and visualized on the dashboard.
-</br>
+This is a business intelligence and financial analytics project, not a machine learning project.
 
-## Features and KPIs
-<br>The dashboard includes the following key performance indicators (KPIs):</br>
+## Business Problem
 
-**Total Loan Applications:** The total count of loan applications in the dataset.
+Financial institutions need reliable reporting to monitor loan portfolio health, repayment performance, bad loans, borrower segments, and lending trends. Without a structured dashboard, analysts must manually query loan records and rebuild recurring reports, slowing down portfolio review and decision-making.
 
-**Total Funded Amount:** The sum of all funded loan amounts.
+This project turns loan-level data into executive-ready dashboards for tracking loan performance, portfolio risk, and borrower behavior.
 
-**Total Amount Received:** The sum of all payments received on loans.
+## Dataset
 
-**Average Interest Rate:** The mean interest rate across all loans.
+* **Dataset:** Financial loan dataset
+* **Core Table:** `bank_loan_data`
+* **Domain:** Bank loan applications and repayment performance
+* **Key Fields:** Loan ID, issue date, loan amount, funded amount, amount received, interest rate, debt-to-income ratio, loan status, state, term, purpose, grade, subgrade, home ownership, employee length
 
-**Average Debt-to-Income (DTI) Ratio:** The average DTI ratio across all loans.
-Good and Bad Loan Distribution: Segmentation of loans into 'Good' (fully paid or current) and 'Bad' (charged off) categories.
+## Key KPIs
 
-## Dashboard Structure
-1. **Summary Dashboard**
+The dashboard tracks the following loan portfolio metrics:
 
-![Summary](Dashboard/SUMMARY.png)
+* Total loan applications
+* Month-to-date loan applications
+* Month-over-month loan application change
+* Total funded amount
+* Month-to-date funded amount
+* Month-over-month funded amount change
+* Total amount received
+* Month-to-date amount received
+* Month-over-month amount received change
+* Average interest rate
+* Average debt-to-income ratio
+* Good loan percentage
+* Bad loan percentage
+* Good loan funded amount and received amount
+* Bad loan funded amount and received amount
 
-The Summary Dashboard provides an overview of key metrics:
+## Dashboard Pages
 
-**Total Loan Application**, Total Funded Amount, and Total Amount Received with month-over-month and month-to-date breakdowns.
+### 1. Summary Dashboard
 
-**Average Interest** Rate and Average DTI Ratio.
+![Summary Dashboard](Dashboard/SUMMARY.png)
 
-**Good Loan Issued and Bad Loan** Issued segments displayed with percentages and amounts.
+The Summary Dashboard provides a high-level view of portfolio performance.
 
-**Loan Status Table** showing counts, funded amounts, and received amounts for fully paid, charged-off, and current loans.
+It includes:
 
+* Total loan applications, funded amount, and amount received
+* Month-to-date and month-over-month KPI tracking
+* Average interest rate and average DTI ratio
+* Good loan vs. bad loan segmentation
+* Loan status breakdown for fully paid, charged-off, and current loans
 
-**2. Overview Dashboard**
+### 2. Overview Dashboard
 
-![Overview](Dashboard/OVERVIEW.png)
+![Overview Dashboard](Dashboard/OVERVIEW.png)
 
-The Overview Dashboard offers a deeper breakdown by various dimensions:
+The Overview Dashboard breaks down loan applications across borrower and loan dimensions.
 
-**Loan Applications by Month:** Trend of loan applications throughout the year.
+It includes:
 
-**Loan Applications by State:** Geographic distribution of loan applications.
+* Loan applications by month
+* Loan applications by state
+* Loan applications by loan term
+* Loan applications by employee length
+* Loan applications by loan purpose
+* Loan applications by home ownership
 
-**Loan Applications by Term:** Distribution of loans based on 36 or 60-month terms.
+### 3. Details Dashboard
 
-**Loan Applications by Employee Length:** Analysis based on applicants' employment length.
+![Details Dashboard](Dashboard/DETAILS.png)
 
-**Loan Applications by Purpose:** Distribution of loans for different purposes (debt consolidation, credit card refinancing, home improvement, etc.).
+The Details Dashboard provides a granular loan-level view for deeper portfolio review.
 
-**Loan Applications by Home Ownership:** Segmentation based on homeownership status (Rent, Mortgage, Own).
+It includes:
 
-**3. Details Dashboard**
-
-![Details](Dashboard/DETAILS.png)
-
-The Details Dashboard provides a granular view of individual loans, showing attributes such as:
-
-**ID:** Unique identifier for each loan.
-
-**Purpose:** Reason for the loan.
-
-**Home Ownership:** Applicant's homeownership status.
-
-**Grade and Subgrade:** Loan grade classification.
-
-**Funded Amount:** Amount funded for the loan.
-
-**Interest Rate and Installment:** Monthly installment and interest rate for each loan.
-Amount Received: Total amount received for each loan.
-
-
+* Loan ID
+* Loan purpose
+* Home ownership
+* Grade and subgrade
+* Funded amount
+* Interest rate
+* Installment
+* Amount received
 
 ## Filter Options
 
-The dashboard includes filters that allow users to drill down on specific dimensions, such as:
+The dashboard allows users to drill down by:
 
-**State:** Filter by applicant's state of residence.
+* State
+* Grade
+* Loan purpose
+* Good vs. bad loan status
 
-**Grade:** Filter by loan grade.
+## SQL Analysis
 
-**Purpose:** Filter by loan purpose.
+SQL was used to query, aggregate, and validate the dashboard KPIs.
 
-**Good vs. Bad Loan:** Filter to view only good or bad loans.
+Examples of SQL analysis include:
 
-## Technology Stack
+* Total loan applications
+* Month-to-date loan applications
+* Total funded amount
+* Month-to-date funded amount
+* Total amount received
+* Month-to-date amount received
+* Average interest rate
+* Average debt-to-income ratio
+* Good loan and bad loan segmentation
+* Loan status breakdown
+* Borrower and loan-purpose segmentation
 
-The project is built with the following technologies:
+## Tools Used
 
-**SQL:** For querying and aggregating data.
-**Power BI**: For creating interactive and visually engaging dashboards.
-**Database Management System:** SQL database containing loan application data.
+SQL, Power BI, Data Cleaning, KPI Reporting, Dashboard Design, Financial Analytics, Business Intelligence
 
-## Setup and Usage
+## Repository Structure
 
-**To use the Bank Loan Report dashboard:**
+```text
+Bank_Loan_Report/
+├── Dashboard/
+├── Bank_Loan_Dashboard.pbix
+├── Query Doc.pdf
+├── financial_loan.csv
+└── README.md
+```
 
-Import the bank_loan_data table into your SQL database.
+## How to Use
 
-Run the provided SQL queries to create aggregations and KPIs.
+1. Open the live Power BI dashboard link to view the published report.
+2. Open `Bank_Loan_Dashboard.pbix` in Power BI Desktop for the full dashboard file.
+3. Review `financial_loan.csv` to inspect the source loan dataset.
+4. Use `Query Doc.pdf` to review the SQL logic used for KPI calculations.
+5. Navigate through the Summary, Overview, and Details dashboard pages.
+6. Use filters to analyze loan performance by state, grade, purpose, and loan quality.
 
-Open the Power BI / Tableau file and connect it to your database.
+## Business Impact
 
-Refresh the data source to populate the dashboard with real-time data.
+This dashboard helps analysts and financial managers monitor loan portfolio performance in one place. It reduces manual reporting effort by centralizing application volume, funded amount, repayment metrics, interest rates, DTI, good/bad loan segmentation, and borrower-level breakdowns into an interactive Power BI report.
 
-Use the filters to explore data by different dimensions as per the analysis needs.
+## Limitations
 
-## Future Enhancements
+* This project is descriptive analytics only and does not predict loan default risk.
+* Good and bad loan classifications are based on loan status logic, not a trained risk model.
+* The dashboard depends on the available historical loan data.
+* Automated refresh is not configured in the repository.
+* Profitability, loss severity, and expected credit loss are not modeled.
 
-Potential enhancements for this project could include:
+## Future Improvements
 
-**Predictive Modeling:** Adding machine learning models to predict loan default risk.
+* Add SQL scripts as `.sql` files instead of PDF-only documentation
+* Add automated Power BI refresh documentation
+* Add loan vintage analysis
+* Add delinquency and charge-off trend analysis
+* Add borrower risk segmentation by grade, purpose, and DTI bands
+* Add profitability metrics such as net return or loss-adjusted return
+* Add a separate default prediction model as an ML extension
 
-**Automated Data Refresh:** Scheduling automatic data updates for real-time insights.
 
 **Interactive Data Drill-Downs:** Enabling users to click through visual elements for more detailed views.
 
